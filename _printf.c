@@ -20,7 +20,7 @@ int typeIdentifiers(char type, va_list arg)
 		{NULL, NULL}
 	};
 
-	for (Index = 0; typefuncts[functsIndex]. != NULL; functsIndex++)
+	for (functsIndex = 0; typefuncts[functsIndex].type != NULL; functsIndex++)
 	{
 		if (functs[functsIndex].type[0] == type)
 			return (functs[functsIndex].toprint(arg));
