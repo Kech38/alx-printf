@@ -1,6 +1,7 @@
 #include "main.h"
 #include <unistd.h>
 #include <stdio.h>
+
 /**
  * print_char - writes the character c to stdout
  * @arg: argument
@@ -13,12 +14,6 @@ int print_char(va_list arg)
 {
 	return (_putchar(va_arg(arg, int)));
 }
-
-/**
- * print_int - prints an integer.
- * @arg: argument
- * Return: 0
- */
 
 /**
  * print_str - prints a string with a `s`(lower case)
@@ -41,6 +36,12 @@ for (i = 0; str[i]; i++)
 
 return (i);
 }
+
+/**
+ * print_int - prints an integer.
+ * @arg: argument
+ * Return: 0
+ */
 
 int print_int(va_list arg)
 {
