@@ -14,7 +14,7 @@ int typeIdentifiers(char type, va_list arg)
 {
 	int functsIndex;
 
-	identifierStruct typefuncts[] = {
+	printStruct typefuncts[] = {
 		{"c", print_char},
 		{"s", print_str},
 		{NULL, NULL}
@@ -22,7 +22,7 @@ int typeIdentifiers(char type, va_list arg)
 
 	for (Index = 0; typefuncts[functsIndex]. != NULL; functsIndex++)
 	{
-		if (functs[functsIndex].indentifier[0] == type)
+		if (functs[functsIndex].type[0] == type)
 			return (functs[functsIndex].toprint(arg));
 	}
 	return (0);
