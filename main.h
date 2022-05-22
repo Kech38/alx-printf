@@ -2,8 +2,6 @@
 #define MAIN_H
 
 #include <stdarg.h>
-#include <stdlib.h>
-#include <stdio.h>
 
 int _putchar(char c);
 int _printf(const char *format, ...);
@@ -21,6 +19,5 @@ typedef struct printStruct
 char *type;
 int (*printer)(va_list);
 } printStruct;
-
 
 #endif
