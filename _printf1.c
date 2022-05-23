@@ -12,20 +12,21 @@
 
 int typeIdentifiers(char type, va_list arg)
 {
-	int functsIndex;
+int functsIndex;
 
-	printStruct typefuncts[] = {
-		{"c", print_char},
-		{"s", print_str},
-		{NULL, NULL}
-	};
+printStruct typefuncts[] = {
 
-	for (functsIndex = 0; typefuncts[functsIndex].type != NULL; functsIndex++)
-	{
-		if (functs[functsIndex].type[0] == type)
-			return (functs[functsIndex].toprint(arg));
-	}
-	return (0);
+{"c", print_char},
+{"s", print_str},
+{NULL, NULL}
+};
+
+for (functsIndex = 0; typefuncts[functsIndex].type != NULL; functsIndex++)
+{
+if (functs[functsIndex].type[0] == type)
+return (functs[functsIndex].toprint(arg));
+}
+return (0);
 }
 
 /**

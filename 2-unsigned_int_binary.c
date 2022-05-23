@@ -11,10 +11,10 @@
 int print_unsignedintToBinary(va_list arg)
 {
 unsigned int i = va_arg(arg, unsigned int);
-unsigned int binary;
+unsigned int print;
 
-print_binary(i, &binary);
-print_binary(i, &binary);
+print_binary(i, &print);
+print_binary(i, &print);
 
-return (binary);
+return (print);
 }
