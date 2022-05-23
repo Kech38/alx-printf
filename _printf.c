@@ -1,43 +1,39 @@
 #include "main.h"
 
 /**
- * _printf - prints a string
- * @format: a pointer to the string
- * Description: it only accept a character, we wil continue to upadte it.
- * Return: Returns an int to the stdout(standard output)
+ * _print - it print the strings base on the conditions
+ * @format: it takes in a string as an argument
+ * @args: it a list of variadic function
+ * Return: 0;
  */
-
-int _printf(const char *format, ...)
+int _print(const char *format, va_list args)
 {
-	int i, count = 0;
-	char *str;
-	va_list chara;
+	int i, j;
+	char *s;
 
-	va_start(chara, format);
-
-	/* To find the length of the string(format) */
 	for (i = 0; format[i]; i++)
 	{
-		if (format[i] == '%' && format[i + 1] == 'c')
-			count--;
-		count++;
-	}
-
-	/* allocating a dynamic memory */
-	str = malloc(count * sizeof(int));
-	if (str == NULL)
-		return ('\0');
-
-	/* printing the result */
-	for (i = 0; format[i]; i++)
-	{
-		if (format[i] == '%' && format[i + 1] == 'c')
+		if (format[i] == '%')
 		{
-			str[i] = va_arg(chara, int);
-			i++;
+			switch (format[i + 1])
+			{
+				case 'c':
+					_putchar(va_arg(args, int));
+					i++;
+					break;
+				case 's':
+					s = va_arg(args, char *);
+					for (j = 0; s[j]; j++)
+						_putchar(s[j]);
+					i++;
+					break;
+				default:
+					_putchar(format[i]);
+					break;
+			}
 		}
 		else
-			str[i] = format[i];
+			_putchar(format[i]);
 	}
-	return (write(1, str, i));
+	return (0);
 }
