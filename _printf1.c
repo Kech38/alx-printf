@@ -23,8 +23,8 @@ printStruct typefuncts[] = {
 
 for (functsIndex = 0; typefuncts[functsIndex].type != NULL; functsIndex++)
 {
-if (functs[functsIndex].type[0] == type)
-return (functs[functsIndex].toprint(arg));
+if (typefuncts[functsIndex].type[0] == type)
+return (typefuncts[functsIndex].toprint(arg));
 }
 return (0);
 }
